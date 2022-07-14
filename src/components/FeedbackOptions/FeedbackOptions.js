@@ -1,21 +1,18 @@
 import PropTypes from 'prop-types';
+import {Button} from "./FeedbackOptions.styled";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return options.map(button => {
         return (
-            <button
+            <Button
                 key={button}
                 type='button'
                 onClick={onLeaveFeedback}
                 name={button}>
-            {button}
-            </button>
+                {button}
+            </Button>
         )})
 };
-
-//CgSmileMouthOpen
-//CgSmileNeutral
-//CgSmileSad
 
 FeedbackOptions.propTypes = {
     options: PropTypes.array.isRequired,

@@ -38,19 +38,19 @@ class Feedback extends Component {
             <div>
                 <Section title='Please leave feedback'>
                     <FeedbackOptions
-                        options = { Object.keys(this.state) }
-                        onLeaveFeedback = { this.handleFeedbackButton }/>
+                        options={Object.keys(this.state)}
+                        onLeaveFeedback={this.handleFeedbackButton} />
                 </Section>
 
                 <Section title='Statistics'>
                     {!total ?
                     (<Notification message="There is no feedback" />) :
                     (<Statistics
-                        good = {good}
-                        neutral = {neutral}
-                        bad = {bad}
-                        total = {total}
-                        positivePercentage={this.countPositiveFeedbackPercentage()}/>)
+                            good={good}
+                            neutral={neutral}
+                            bad={bad}
+                            total={total}
+                            positivePercentage={this.countPositiveFeedbackPercentage()} />)
                     }
                 </Section>
                     
