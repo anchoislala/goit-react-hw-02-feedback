@@ -24,10 +24,14 @@ class Feedback extends Component {
         return good + neutral + bad;
     }
 
-    countPositiveFeedbackPercentage() {
+    countPositiveFeedbackPercentage () {
         const { good } = this.state;
         const total = this.countTotalFeedback();
         return Number(total ? (good / total * 100).toFixed(0) : 0);
+    }
+
+    getFeedbackOptions() {
+        return Object.keys(this.state);
     }
 
     render() {
@@ -38,7 +42,7 @@ class Feedback extends Component {
             <div>
                 <Section title='Please leave feedback'>
                     <FeedbackOptions
-                        options={Object.keys(this.state)}
+                        options={this.getFeedbackOptions()}
                         onLeaveFeedback={this.handleFeedbackButton} />
                 </Section>
 
